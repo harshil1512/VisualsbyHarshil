@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags - Replace with your personal branding -->
+    <title>VisualsByHarshil - Professional Video Editor Portfolio</title>
+    <meta name="description" content="Professional video editor specializing in cinematic storytelling, color grading, and motion graphics. Transform your vision into unforgettable visual experiences.">
+    
+    <!-- Open Graph Tags for Social Sharing - Update with your details -->
+    <meta property="og:title" content="VisualsByHarshil - Professional Video Editor Portfolio">
+    <meta property="og:description" content="Every frame tells a story and I make sure yours is unforgettable">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yourwebsite.com/og-image.jpg">
+    
+    <!-- Favicon - Replace with your custom favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark" id="main-content">
+    <!-- Header & Navigation -->
+    <header class="header">
+        <nav class="nav container">
+            <!-- Replace 'VisualsByHarshil' with your personal brand name -->
+            <div class="nav__logo">
+                <a href="#home">VisualsByHarshil</a>
+            </div>
+            
+            <ul class="nav__menu" id="nav-menu">
+                <li class="nav__item">
+                    <a href="#home" class="nav__link">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#portfolio" class="nav__link">Portfolio</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#about" class="nav__link">About</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#services" class="nav__link">Services</a>
+                </li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav__actions">
+                <!-- Dark/Light Mode Toggle -->
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" class="theme-toggle__btn" aria-label="Toggle dark/light mode">
+                        <i class="fas fa-sun theme-toggle__icon theme-toggle__icon--light"></i>
+                        <i class="fas fa-moon theme-toggle__icon theme-toggle__icon--dark"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Toggle -->
+                <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    Every frame tells a story and I make sure yours is <span class="hero__accent">unforgettable</span>
+                </h1>
+                <p class="hero__subtitle">
+                    Professional video editor crafting cinematic experiences that captivate audiences and elevate your brand.
+                </p>
+                <div class="hero__cta-container">
+                    <button class="btn btn--primary hero__cta" onclick="scrollToSection('portfolio')">
+                        Watch My Work
+                        <i class="fas fa-arrow-down"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="hero__decoration">
+                <div class="hero__decoration-circle"></div>
+                <div class="hero__decoration-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Work</h2>
+                <p class="section-subtitle">A showcase of my latest video editing projects</p>
+            </div>
+            
+            <div class="portfolio__grid">
+                <!-- Long Form Video 1 - Replace 'dQw4w9WgXcQ' with your YouTube video ID -->
+                <div class="portfolio__item" data-video-type="Long-form">
+                    <div class="portfolio__thumbnail">
+                        <!-- Replace the video ID in the thumbnail URL -->
+                        <img src="https://img.youtube.com/vi/rtPsowKZigE/maxresdefault.jpg" alt="Brand Documentary">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__info">
+                                <span class="portfolio__type">Long-form</span>
+                                <h3 class="portfolio__title">Voiceover & Motion Graphics Edit</h3>
+                                <p class="portfolio__description">Managed full editing workflow from voiceover and script to final delivery, following client references and style guidelines!</p>
+                                <div class="portfolio__duration">4:24</div>
+                            </div>
+                            <button class="portfolio__play" onclick="openVideoModal('rtPsowKZigE')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Long Form Video 2 - Replace with your video ID -->
+                <div class="portfolio__item" data-video-type="Long-form">
+                    <div class="portfolio__thumbnail">
+                        <img src="https://img.youtube.com/vi/bUIjO9xuCkE/maxresdefault.jpg" alt="Product Launch">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__info">
+                                <span class="portfolio__type">Long-form</span>
+                                <h3 class="portfolio__title">Editing for Financial storytelling</h3>
+                                <p class="portfolio__description">A clean, dynamic edit desined for financial content!</p>
+                                <div class="portfolio__duration">1:13</div>
+                            </div>
+                            <button class="portfolio__play" onclick="openVideoModal('bUIjO9xuCkE')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Long Form Video 3 - Replace with your video ID -->
+                <div class="portfolio__item" data-video-type="Long-form">
+                    <div class="portfolio__thumbnail">
+                        <img src="https://img.youtube.com/vi/P8lNTLP1oPE/maxresdefault.jpg" alt="Corporate Event">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__info">
+                                <span class="portfolio__type">Long-form</span>
+                                <h3 class="portfolio__title">Editing Skills in Action</h3>
+                                <p class="portfolio__description">A concise showcase of core editing techniques and precision!</p>
+                                <div class="portfolio__duration">0:33</div>
+                            </div>
+                            <button class="portfolio__play" onclick="openVideoModal('P8lNTLP1oPE')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Short Form Video 1 - Replace with your video ID -->
+                <div class="portfolio__item" data-video-type="Short-form">
+                    <div class="portfolio__thumbnail">
+                        <img src="https://img.youtube.com/vi/3GwPD9w90bw/maxresdefault.jpg" alt="Social Media Campaign">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__info">
+                                <span class="portfolio__type">Long-form</span>
+                                <h3 class="portfolio__title">Visual Flavours!</h3>
+                                <p class="portfolio__description">A motion-graphic showcase of French café flavour minimal, vibrant, and elegant!</p>
+                                <div class="portfolio__duration">0:16</div>
+                            </div>
+                            <button class="portfolio__play" onclick="openVideoModal('3GwPD9w90bw')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Short Form Video 2 - Replace with your video ID -->
+                <div class="portfolio__item" data-video-type="Short-form">
+                    <div class="portfolio__thumbnail">
+                        <img src="https://img.youtube.com/vi/xxfhTR0Mj90/maxresdefault.jpg" alt="Product Demo">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__info">
+                                <span class="portfolio__type">Short-form</span>
+                                <h3 class="portfolio__title">Framing Resilience</h3>
+                                <p class="portfolio__description">Fast-paced, engaging content optimized for Instagram and TikTok!</p>
+                                <div class="portfolio__duration">0:16</div>
+                            </div>
+                            <button class="portfolio__play" onclick="openVideoModal('xxfhTR0Mj90')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Short Form Video 3 - Replace with your video ID -->
+                <div class="portfolio__item" data-video-type="Short-form">
+                    <div class="portfolio__thumbnail">
+                        <img src="https://img.youtube.com/vi/AEO0CUGypRk/maxresdefault.jpg" alt="Brand Story">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__info">
+                                <span class="portfolio__type">Short-form</span>
+                                <h3 class="portfolio__title">Top Tools, Seamless Edit</h3>
+                                <p class="portfolio__description">Bringing clarity and style to Quick guide on mobile editing apps</p>
+                                <div class="portfolio__duration">0:29</div>
+                            </div>
+                            <button class="portfolio__play" onclick="openVideoModal('AEO0CUGypRk')">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about__content">
+      
+      <!-- Updated Image Container -->
+      <div class="about__image-container">
+        <!-- Decorative Circles -->
+        <div class="decorative-circle decorative-circle--1"></div>
+        <div class="decorative-circle decorative-circle--2"></div>
+        <div class="decorative-circle decorative-circle--3"></div>
+        <div class="decorative-circle decorative-circle--4"></div>
+        <div class="decorative-circle decorative-circle--5"></div>
+        
+        <!-- Profile Image -->
+        <div class="about__image">
+          <img src="https://raw.githubusercontent.com/harshil1512/my-website-assets/2dfbdd10b09b78bdcdbf33ead5127bd63fa97c8f/Harshil3.jpeg" alt="Harshil Chaudhary - Professional Video Editor">
+        </div>
+
+        <!-- Name under the image -->
+        <h3 class="about__name">Harshil Chaudhary</h3>
+      </div>
+      
+      <!-- Text content (same as first version) -->
+      <div class="about__text">
+        <h2 class="about__title">
+          Your vision deserves more than just an edit—it deserves <span class="about__accent">impact</span>
+        </h2>
+        <p class="about__description">
+          I'm passionate about turning ideas into engaging visual experiences. With a strong focus on storytelling and trends, I use DaVinci Resolve to craft edits that are sharp, modern, and designed to connect.
+        </p>
+        <p class="about__philosophy">
+          Every project is an opportunity to push creative boundaries while maintaining the highest technical standards. From corporate documentaries to viral social media content, I bring the same level of dedication and artistic vision to every frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats Section (unchanged from first version) -->
+    <div class="about__stats">
+      <div class="stat">
+        <div class="stat__icon"><i class="fas fa-video"></i></div>
+        <span class="stat__number">20+</span>
+        <span class="stat__label">Projects Completed</span>
+      </div>
+      <div class="stat">
+        <div class="stat__icon"><i class="fas fa-users"></i></div>
+        <span class="stat__number">12+</span>
+        <span class="stat__label">Happy Clients</span>
+      </div>
+      <div class="stat">
+        <div class="stat__icon"><i class="fas fa-clock"></i></div>
+        <span class="stat__number">30+</span>
+        <span class="stat__label">Hours of Content</span>
+      </div>
+      <div class="stat">
+        <div class="stat__icon"><i class="fas fa-star"></i></div>
+        <span class="stat__number">4.9</span>
+        <span class="stat__label">Rating</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">Comprehensive video editing solutions tailored to elevate your content and engage your audience across all platforms.</p>
+            </div>
+            
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="service-card__title">Video Editing</h3>
+                    <p class="service-card__description">Professional post-production with seamless cuts, transitions, and storytelling that captivates your audience.</p>
+                    <ul class="service-card__features">
+                        <li>Multi-camera editing</li>
+                        <li>Advanced transitions</li>
+                        <li>Narrative flow</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="service-card__title">Color Grading</h3>
+                    <p class="service-card__description">Cinematic color correction and grading to enhance visual impact and create the perfect mood.</p>
+                    <ul class="service-card__features">
+                        <li>LUT application</li>
+                        <li>Color matching</li>
+                        <li>Mood enhancement</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3 class="service-card__title">Sound Design</h3>
+                    <p class="service-card__description">Audio enhancement, mixing, and soundtrack integration for immersive viewing experiences.</p>
+                    <ul class="service-card__features">
+                        <li>Audio mixing</li>
+                        <li>Sound effects</li>
+                        <li>Music integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__icon">
+                        <i class="fas fa-magic"></i>
+                    </div>
+                    <h3 class="service-card__title">Motion Graphics</h3>
+                    <p class="service-card__description">Dynamic animations, titles, and visual effects that bring your content to life.</p>
+                    <ul class="service-card__features">
+                        <li>Custom animations</li>
+                        <li>Title sequences</li>
+                        <li>Visual effects</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card service-card--premium">
+                    <div class="service-card__badge">PREMIUM</div>
+                    <div class="service-card__icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="service-card__title">Premium Full-Service</h3>
+                    <p class="service-card__description">Complete video production package from initial concept to final delivery and optimization.</p>
+                    <ul class="service-card__features">
+                        <li>End-to-end production</li>
+                        <li>Creative consultation</li>
+                        <li>Multi-format delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Create</h2>
+                <p class="section-subtitle">Ready to bring your vision to life? Let's discuss your project and create something extraordinary together.</p>
+            </div>
+            
+            <div class="contact__content">
+                <div class="contact__form-container">
+                    <form class="contact__form" id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="video-type" class="form-label">Type of Video Needed</label>
+                            <select id="video-type" name="video-type" class="form-select" required>
+                                <option value="">Select video type</option>
+                                <option value="long-form">Long Form</option>
+                                <option value="short-form">Short Form</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Project Details</label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell me about your project..." maxlength="300"></textarea>
+                            <div class="character-counter">
+                                <span id="char-count">0</span>/300
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary btn--full-width">
+                            Let's Create
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="contact__info">
+                    <div class="contact__details">
+                        <h3>Get in Touch</h3>
+                        <div class="contact__item">
+                            <i class="fas fa-envelope"></i>
+                            <!-- Replace with your email -->
+                            <span>visualsbyharshil@gmail.com</span>
+                        </div>
+                        <div class="contact__item">
+                            <i class="fas fa-phone"></i>
+                            <!-- Replace with your phone number -->
+                            <span>+91 70469 69097</span>
+                        </div>
+                        <div class="contact__item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <!-- Replace with your location -->
+                            <span>Collaborating Globally</span>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__social">
+                        <h4>Follow Me</h4>
+                        <div class="social-links">
+                            <!-- Replace with your Instagram URL -->
+                            <a href="https://instagram.com/visualsbyhl" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <!-- Replace with your WhatsApp number -->
+                            <a href="https://wa.me/7046969097" target="_blank" class="social-link">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__guarantee">
+                        <div class="guarantee-badge">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Quick Response Guarantee</h4>
+                                <p>I'll get back to you within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <!-- Replace with your brand name -->
+                    <h3>VisualsByHarshil</h3>
+                    <p>Every frame tells a story</p>
+                </div>
+                
+                <div class="footer__links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <!-- Replace with your social media URLs -->
+                        <a href="https://instagram.com/visualsbyhl" target="_blank" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/7046969097" target="_blank" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <!-- Replace with Harshil Chaudhary and year -->
+                <p>&copy; 2025 VisualsByHarshil. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div id="video-modal" class="video-modal hidden">
+        <div class="video-modal__overlay" onclick="closeVideoModal()"></div>
+        <div class="video-modal__content">
+            <button class="video-modal__close" onclick="closeVideoModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-modal__player" id="video-player">
+                <!-- YouTube video will be embedded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
