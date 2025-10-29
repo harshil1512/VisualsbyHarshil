@@ -59,6 +59,7 @@ class ThemeManager {
     }
 }
 
+
 // ===== NAVIGATION FUNCTIONALITY =====
 class Navigation {
     constructor() {
@@ -183,6 +184,7 @@ class Navigation {
     }
 }
 
+
 // ===== VIDEO MODAL FUNCTIONALITY =====
 class VideoModal {
     constructor() {
@@ -275,6 +277,7 @@ class VideoModal {
     }
 }
 
+
 // ===== CONTACT FORM FUNCTIONALITY =====
 class ContactForm {
     constructor() {
@@ -298,7 +301,7 @@ class ContactForm {
             this.updateCharCount();
         }
         
-        // Form submission
+        // Form submission - FIXED FOR NETLIFY
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
         
         // Real-time validation
@@ -415,8 +418,6 @@ class ContactForm {
     }
     
     handleSubmit(e) {
-        e.preventDefault();
-        
         // Validate all fields
         const inputs = this.form.querySelectorAll('input[required], select[required], textarea[required]');
         let isFormValid = true;
@@ -427,9 +428,9 @@ class ContactForm {
             }
         });
         
-        if (isFormValid) {
-            this.submitForm();
-        } else {
+        if (!isFormValid) {
+            // Prevent default ONLY if validation fails
+            e.preventDefault();
             this.showFormError('Please correct the errors above');
             // Scroll to first error
             const firstError = this.form.querySelector('.field-error');
@@ -437,91 +438,8 @@ class ContactForm {
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
-    }
-    
-    submitForm() {
-        if (!this.submitBtn) return;
-        
-        // Get form data
-        const formData = new FormData(this.form);
-        const data = Object.fromEntries(formData);
-        
-        // Show loading state
-        const originalText = this.submitBtn.innerHTML;
-        this.submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        this.submitBtn.disabled = true;
-        this.submitBtn.style.opacity = '0.7';
-        
-        // Simulate form submission (replace with actual submission logic)
-        setTimeout(() => {
-            this.showSuccessMessage();
-            this.form.reset();
-            this.updateCharCount();
-            
-            // Reset button
-            this.submitBtn.innerHTML = originalText;
-            this.submitBtn.disabled = false;
-            this.submitBtn.style.opacity = '';
-            
-            // Reset textarea height
-            if (this.messageTextarea) {
-                this.messageTextarea.style.height = 'auto';
-            }
-        }, 2000);
-        
-        // Log form data for development (replace with actual API call)
-        console.log('Form submitted with data:', data);
-        
-        // Here you would typically send the data to your backend:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(data)
-        // })
-    }
-    
-    showSuccessMessage() {
-        // Remove any existing messages
-        this.removeMessages();
-        
-        // Create success message
-        const successDiv = document.createElement('div');
-        successDiv.className = 'success-message';
-        successDiv.innerHTML = `
-            <i class="fas fa-check-circle"></i>
-            <div>
-                <h4>Message sent successfully!</h4>
-                <p>Thank you for your interest. I'll get back to you within 24 hours.</p>
-            </div>
-        `;
-        
-        // Style the success message
-        successDiv.style.cssText = `
-            background: linear-gradient(135deg, rgba(110, 231, 183, 0.1), rgba(147, 51, 234, 0.05));
-            border: 1px solid #6EE7B7;
-            color: #6EE7B7;
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            animation: slideInDown 0.5s ease-out;
-        `;
-        
-        // Insert at top of form
-        this.form.insertBefore(successDiv, this.form.firstChild);
-        
-        // Remove after 8 seconds
-        setTimeout(() => {
-            if (successDiv.parentNode) {
-                successDiv.style.animation = 'fadeOut 0.3s ease-out';
-                setTimeout(() => successDiv.remove(), 300);
-            }
-        }, 8000);
-        
-        // Scroll to success message
-        successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // If validation passes, allow default form submission to Netlify
+        // Netlify will handle the form submission automatically
     }
     
     showFormError(message) {
@@ -570,6 +488,7 @@ class ContactForm {
         existingMessages.forEach(msg => msg.remove());
     }
 }
+
 
 // ===== SCROLL ANIMATIONS =====
 class ScrollAnimations {
@@ -620,6 +539,7 @@ class ScrollAnimations {
         this.observer.unobserve(element);
     }
 }
+
 
 // ===== PORTFOLIO INTERACTIONS =====
 class PortfolioManager {
@@ -695,6 +615,7 @@ class PortfolioManager {
     }
 }
 
+
 // ===== UTILITY FUNCTIONS =====
 
 // Smooth scroll to section
@@ -737,6 +658,7 @@ function debounce(func, wait, immediate) {
         if (callNow) func.apply(this, args);
     };
 }
+
 
 // ===== PERFORMANCE OPTIMIZATIONS =====
 class PerformanceOptimizer {
@@ -810,6 +732,7 @@ class PerformanceOptimizer {
         document.head.appendChild(fontLink);
     }
 }
+
 
 // ===== ACCESSIBILITY ENHANCEMENTS =====
 class AccessibilityEnhancer {
@@ -929,6 +852,7 @@ class AccessibilityEnhancer {
     }
 }
 
+
 // ===== INITIALIZATION =====
 let themeManager, navigation, videoModal, contactForm, scrollAnimations, portfolioManager, performanceOptimizer, accessibilityEnhancer;
 
@@ -968,6 +892,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
 // ===== ERROR HANDLING =====
 window.addEventListener('error', (event) => {
     console.error('JavaScript Error:', event.error);
@@ -988,6 +913,7 @@ window.addEventListener('unhandledrejection', (event) => {
     event.preventDefault();
 });
 
+
 // ===== PERFORMANCE MONITORING =====
 if ('performance' in window) {
     window.addEventListener('load', () => {
@@ -1002,6 +928,7 @@ if ('performance' in window) {
         }
     });
 }
+
 
 // ===== EXPORT FOR TESTING =====
 if (typeof module !== 'undefined' && module.exports) {
